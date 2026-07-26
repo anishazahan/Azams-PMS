@@ -26,9 +26,7 @@ export default function HomePage() {
 
       <ProcessSteps />
       <WhyChooseUs />
-      <div className="bg-red-500">
-        <ContactCTA />
-      </div>
+      <ContactCTA />
       <TestimonialSection />
       <CTASection />
     </>

@@ -138,7 +138,7 @@ export const PinnedShowcase = () => {
                     </div>
 
                     <h3 className="text-xl font-bold text-white transition-colors group-hover:text-sky-300">
-                      {service.title}
+                      {service.name}
                     </h3>
 
                     <p className="mt-3 line-clamp-3 text-xs leading-relaxed text-slate-300">
@@ -149,9 +149,9 @@ export const PinnedShowcase = () => {
 
                   {/* Bottom Content */}
                   <div>
-                    {service.highlights && service.highlights.length > 0 && (
+                    {service.features && service.features.length > 0 && (
                       <div className="mb-6 flex flex-col gap-2 border-t border-slate-800/80 pt-4">
-                        {service.highlights
+                        {service.features
                           .slice(0, 2)
                           .map((item: string, idx: number) => (
                             <div
