@@ -23,39 +23,7 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- Operational Modes Data ---
-const OPERATIONAL_MODES = [
-  {
-    id: "mep",
-    title: "MEP & Technical Ops",
-    icon: Wrench,
-    metric: "99.98% Uptime",
-    status: "Active Monitoring",
-    description:
-      "HVAC, electrical grids, and mechanical health tracked with zero-downtime precision.",
-    badgeColor: "text-sky-400 border-sky-500/30 bg-sky-500/10",
-  },
-  {
-    id: "security",
-    title: "Smart Security",
-    icon: ShieldCheck,
-    metric: "24/7 Live Patrol",
-    status: "Perimeter Locked",
-    description:
-      "Multi-layered physical security combined with smart visitor authentication systems.",
-    badgeColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-  },
-  {
-    id: "housekeeping",
-    title: "Precision Cleaning",
-    icon: Sparkles,
-    metric: "15,000+ Staff",
-    status: "Audit Compliant",
-    description:
-      "Hospitality-grade mechanized sanitation and automated compliance scheduling.",
-    badgeColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-  },
-];
+import { OPERATIONAL_MODES } from "@/constants/demoData";
 
 // --- 3D Sharp Architectural Facility Component ---
 function ArchitecturalBuilding({ activeMode }: { activeMode: string }) {
@@ -130,7 +98,7 @@ function ArchitecturalBuilding({ activeMode }: { activeMode: string }) {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-500"></span>
             </span>
             <span className="whitespace-nowrap text-[11px] uppercase tracking-wider text-slate-200">
-              {activeMode} // NODE ACTIVE
+              {activeMode} {"// NODE ACTIVE"}
             </span>
           </motion.div>
         </Html>
@@ -140,7 +108,7 @@ function ArchitecturalBuilding({ activeMode }: { activeMode: string }) {
 }
 
 // --- Main Sharp Hero Component ---
-export default function Hero() {
+export const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
   const textGroupRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<number>(0);

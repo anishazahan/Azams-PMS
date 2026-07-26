@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import PageHero from "@/components/sections/shared/PageHero";
 import ServiceCard from "@/components/sections/services/ServiceCard";
-import ProcessSteps from "@/components/sections/shared/ProcessSteps";
+import { ProcessSteps } from "@/components/sections/shared/ProcessSteps";
 import CTASection from "@/components/sections/shared/CTASection";
 
 export const metadata: Metadata = {

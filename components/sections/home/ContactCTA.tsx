@@ -18,15 +18,9 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PROPERTY_TYPES = [
-  { id: "commercial", label: "Commercial IT/Office", icon: Building2 },
-  { id: "residential", label: "Premium Residential", icon: Home },
-  { id: "industrial", label: "Industrial/Logistics", icon: Factory },
-];
+import { PROPERTY_TYPES, SQFT_RANGES } from "@/constants/demoData";
 
-const SQFT_RANGES = ["< 100k Sq.Ft", "100k - 500k Sq.Ft", "500k - 1M+ Sq.Ft"];
-
-export default function ContactCTA() {
+export const ContactCTA = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedType, setSelectedType] = useState(PROPERTY_TYPES[0].id);
   const [selectedSize, setSelectedSize] = useState(SQFT_RANGES[1]);
@@ -123,7 +117,7 @@ export default function ContactCTA() {
                 {/* Property Type Selection */}
                 <div>
                   <label className="mb-3 block font-mono text-xs uppercase tracking-wider text-slate-400">
-                    // Select Property Asset Class
+                    {"// Select Property Asset Class"}
                   </label>
                   <div className="grid grid-cols-3 gap-2">
                     {PROPERTY_TYPES.map((type) => {
@@ -153,7 +147,7 @@ export default function ContactCTA() {
                 {/* Sq Ft Selection */}
                 <div>
                   <label className="mb-3 block font-mono text-xs uppercase tracking-wider text-slate-400">
-                    // Estimated Coverage Area
+                    {"// Estimated Coverage Area"}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {SQFT_RANGES.map((range) => (

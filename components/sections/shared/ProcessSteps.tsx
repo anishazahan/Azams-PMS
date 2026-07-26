@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProcessSteps() {
+export const ProcessSteps = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -66,7 +66,7 @@ export default function ProcessSteps() {
           </div>
 
           <p className="process-anim-item max-w-md font-mono text-sm leading-relaxed text-slate-400">
-            // STRUCTURED TRANSITION: A calibrated onboarding workflow that
+            {"// STRUCTURED TRANSITION: "}A calibrated onboarding workflow that
             deploys trained staff, configures IoT monitoring, and initiates SLAs
             within weeks.
           </p>
@@ -106,7 +106,7 @@ export default function ProcessSteps() {
                     <IconBadge icon={step.icon} />
                   </div>
                   <span className="font-mono text-xs font-semibold uppercase tracking-widest text-sky-400">
-                    PHASE // {String(i + 1).padStart(2, "0")}
+                    PHASE {"//"} {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 

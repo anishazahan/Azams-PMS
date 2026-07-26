@@ -18,67 +18,9 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TESTIMONIALS = [
-  {
-    id: "dlf-cybercity",
-    author: "Vikramjit Sharma",
-    role: "VP - Infrastructure & Asset Mgmt",
-    company: "DLF CyberCity Towers",
-    propertyType: "Grade-A Commercial Park",
-    location: "Gurugram, NCR",
-    avatarInitial: "VS",
-    rating: 5,
-    auditScore: "99.8% SLA Score",
-    quote:
-      "Amaze PMS completely transformed our facility operations across 2.4 Million Sq. Ft. Their MEP predictive maintenance reduced our chiller downtime to virtually zero during peak summer months.",
-    keyMetrics: [
-      { label: "Chiller Downtime", value: "0.00%" },
-      { label: "Energy Optimization", value: "-14.2%" },
-      { label: "Audit Rating", value: "A+ Grade" },
-    ],
-    tagColor: "text-sky-400 border-sky-500/30 bg-sky-500/10",
-  },
-  {
-    id: "godrej-properties",
-    author: "Ananya Deshmukh",
-    role: "Head of Facility Operations",
-    company: "Godrej Living",
-    propertyType: "Luxury Residential Township",
-    location: "Mumbai, Maharashtra",
-    avatarInitial: "AD",
-    rating: 5,
-    auditScore: "4.95/5.0 Resident CSAT",
-    quote:
-      "Managing 200+ security personnel and mechanized housekeeping across a 180-acre estate requires discipline. Amaze PMS's digital shift tracking gave us complete visibility and accountability.",
-    keyMetrics: [
-      { label: "Resident CSAT", value: "4.95 / 5" },
-      { label: "Gate Response", value: "< 45 Secs" },
-      { label: "Staff Retention", value: "94%" },
-    ],
-    tagColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-  },
-  {
-    id: "embassy-park",
-    author: "Rajesh K. Nair",
-    role: "Director - Corporate Real Estate",
-    company: "Embassy TechVillage",
-    propertyType: "Enterprise IT Campus",
-    location: "Bengaluru, Karnataka",
-    avatarInitial: "RN",
-    rating: 5,
-    auditScore: "100% Statutory Compliant",
-    quote:
-      "When hosting Fortune 500 tech clients, facility compliance is non-negotiable. Amaze PMS provides instant digital access to every labor, PF, and safety audit document without delay.",
-    keyMetrics: [
-      { label: "Statutory Audit", value: "100% Compliant" },
-      { label: "Helpdesk SLA", value: "99.4%" },
-      { label: "Daily Footfall", value: "28K People" },
-    ],
-    tagColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-  },
-];
+import { TESTIMONIALS } from "@/constants/demoData";
 
-export default function TestimonialSection() {
+export const TestimonialSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -143,8 +85,7 @@ export default function TestimonialSection() {
           </h2>
 
           <p className="testimonial-anim-item mt-4 font-mono text-sm leading-relaxed text-slate-400">
-            // Real-world performance feedback from directors and vice
-            presidents managing India’s largest commercial real estate assets.
+            {"// Real-world performance feedback from directors and vice presidents managing India’s largest commercial real estate assets."}
           </p>
         </div>
 
@@ -154,7 +95,7 @@ export default function TestimonialSection() {
           <div className="flex flex-col gap-4 lg:col-span-5">
             <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
               <span className="font-mono text-xs text-slate-400 uppercase">
-                // EXECUTIVE TESTIMONIAL DECK
+                {"// EXECUTIVE TESTIMONIAL DECK"}
               </span>
               <div className="flex items-center gap-1">
                 <button

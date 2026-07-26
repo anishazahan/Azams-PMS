@@ -1,4 +1,5 @@
 import type { NavItem } from "@/types";
+import { ROUTES } from "./routes";
 
 export const SITE = {
   name: "Amaze PMS",
@@ -26,24 +27,24 @@ export const SITE = {
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Clients", href: "/clients" },
-  { label: "Careers", href: "/careers" },
-  { label: "Blog", href: "/blog" },
+  { label: "Home", href: ROUTES.HOME },
+  { label: "About", href: ROUTES.ABOUT },
+  { label: "Services", href: ROUTES.SERVICES },
+  { label: "Clients", href: ROUTES.CLIENTS },
+  { label: "Careers", href: ROUTES.CAREERS },
+  { label: "Blog", href: ROUTES.BLOG },
 ];
 
 export const FOOTER_LINKS = {
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Clients", href: "/clients" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Careers", href: "/careers" },
+    { label: "About Us", href: ROUTES.ABOUT },
+    { label: "Our Clients", href: ROUTES.CLIENTS },
+    { label: "Testimonials", href: ROUTES.TESTIMONIALS },
+    { label: "Careers", href: ROUTES.CAREERS },
   ],
   resources: [
-    { label: "Services", href: "/services" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Services", href: ROUTES.SERVICES },
+    { label: "Blog", href: ROUTES.BLOG },
+    { label: "Contact", href: ROUTES.CONTACT },
   ],
 };

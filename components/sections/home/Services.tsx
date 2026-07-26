@@ -22,124 +22,9 @@ import Button from "@/components/ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SERVICES_DATA = [
-  {
-    id: "mep",
-    title: "MEP & Technical Operations",
-    category: "ENGINEERING",
-    icon: Wrench,
-    summary: "Comprehensive mechanical, electrical, and plumbing engineering designed for zero operational downtime in high-density facilities.",
-    stats: [
-      { label: "SLA Compliance", value: "99.9%" },
-      { label: "Response Time", value: "< 15 Mins" },
-      { label: "Certified Engineers", value: "1,200+" },
-    ],
-    features: [
-      "24/7 HVAC & Chiller Plant Management",
-      "High-Voltage Electrical Grid & DG Set Audits",
-      "Automated Water Treatment & Plumbing Diagnostics",
-      "Predictive Maintenance via IoT Sensor Logging"
-    ],
-    tagColor: "text-sky-400 border-sky-500/30 bg-sky-500/10",
-  },
-  {
-    id: "security",
-    title: "Smart Security & Guarding",
-    category: "PROTECTION",
-    icon: ShieldCheck,
-    summary: "Multi-layered physical security combined with digital visitor management systems and emergency protocols.",
-    stats: [
-      { label: "Active Guards", value: "5,000+" },
-      { label: "Incident Rate", value: "< 0.01%" },
-      { label: "Coverage", value: "24/7/365" },
-    ],
-    features: [
-      "Ex-Servicemen & Trained Guard Deployment",
-      "AI-Powered License Plate & Visitor Tracking",
-      "Perimeter Surveillance & Emergency Quick Response",
-      "Command Center Remote Incident Escalation"
-    ],
-    tagColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-  },
-  {
-    id: "housekeeping",
-    title: "Precision Housekeeping",
-    category: "SANITATION",
-    icon: Sparkles,
-    summary: "Hospitality-grade mechanized cleaning routines engineered for corporate headquarters, IT parks, and residential complexes.",
-    stats: [
-      { label: "Daily Sq. Ft.", value: "20M+" },
-      { label: "Audit Rating", value: "4.9/5.0" },
-      { label: "Eco-Chemicals", value: "100%" },
-    ],
-    features: [
-      "Automated Floor Scrubbing & High-Reach Glazing",
-      "Hospital-Grade Color-Coded Microfiber Systems",
-      "Scheduled Deep Sanitization & Odor Control",
-      "Waste Segregation & Green Compliance Audits"
-    ],
-    tagColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-  },
-  {
-    id: "pest",
-    title: "Eco Pest Management",
-    category: "HYGIENE",
-    icon: Bug,
-    summary: "Scientific, non-toxic pest containment protocols targeted for commercial kitchens, server rooms, and public concourses.",
-    stats: [
-      { label: "Safety Rating", value: "100% Non-Toxic" },
-      { label: "Compliance", value: "HACCP Approved" },
-      { label: "Frequency", value: "Tailored SLAs" },
-    ],
-    features: [
-      "Zero-Chemical Electronic Rodent Monitoring",
-      "Termite & Wood Borer Eradication Guarantees",
-      "Odourless Organic Gel Treatments",
-      "Regular Bio-Audit Reports & Documentation"
-    ],
-    tagColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
-  },
-  {
-    id: "landscape",
-    title: "Horticulture & Gardening",
-    category: "ENVIRONMENT",
-    icon: Trees,
-    summary: "Architectural landscape management, indoor air-purifying plant installations, and automated drip irrigation systems.",
-    stats: [
-      { label: "Green Cover", value: "2.5M Sq. Ft." },
-      { label: "Water Saved", value: "35% (Drip)" },
-      { label: "Botanists", value: "85+ On-Roll" },
-    ],
-    features: [
-      "Corporate Indoor Air Hygiene Greenery Solutions",
-      "Automated Weather-Sensing Irrigation Networks",
-      "Seasonal Floral Design & Lawn Turf Maintenance",
-      "Soil Nutrient Diagnostics & Organic Composting"
-    ],
-    tagColor: "text-teal-400 border-teal-500/30 bg-teal-500/10",
-  },
-  {
-    id: "pool",
-    title: "Pool & Aquatic Care",
-    category: "MAINTENANCE",
-    icon: Waves,
-    summary: "Precision chemical balancing, filtration overhaul, and life-safety oversight for residential and club pools.",
-    stats: [
-      { label: "pH Balance", value: "Automated" },
-      { label: "Lifeguards", value: "Certified" },
-      { label: "Clearance", value: "Daily Audits" },
-    ],
-    features: [
-      "Automated Chlorine & pH Dosing Controllers",
-      "Sand Filter Backwashing & Pump Overhauls",
-      "Certified Lifeguard & Rescue Personnel Patrols",
-      "Tile Scrubbing & Algae Prevention Regimens"
-    ],
-    tagColor: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
-  },
-];
+import { SERVICES_DATA } from "@/constants/demoData";
 
-export default function ServicesSection() {
+export const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedService, setSelectedService] = useState<number>(0);
 
@@ -193,7 +78,7 @@ export default function ServicesSection() {
           </div>
 
           <p className="service-header-item max-w-md font-mono text-sm leading-relaxed text-slate-400">
-            // SINGLE-POINT ACCOUNTABILITY: From technical MEP oversight to specialized sanitation, we run integrated operations backed by 23+ years of expertise.
+            {"// SINGLE-POINT ACCOUNTABILITY: "}From technical MEP oversight to specialized sanitation, we run integrated operations backed by 23+ years of expertise.
           </p>
         </div>
 
@@ -278,7 +163,7 @@ export default function ServicesSection() {
                 </div>
 
                 <div>
-                  <h4 className="mb-3 font-mono text-xs uppercase tracking-widest text-slate-400">// OPERATIONAL SCOPE</h4>
+                  <h4 className="mb-3 font-mono text-xs uppercase tracking-widest text-slate-400">{"// OPERATIONAL SCOPE"}</h4>
                   <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                     {activeService.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2.5 rounded-sm border border-slate-800/50 bg-slate-950/40 p-2.5 text-xs text-slate-300">

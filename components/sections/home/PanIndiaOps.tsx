@@ -22,97 +22,9 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- Pan-India Regional Hubs Data ---
-const REGIONAL_HUBS = [
-  {
-    id: "north",
-    region: "NORTH ZONE",
-    primaryHub: "Delhi-NCR & Haryana",
-    sqft: "6.5M Sq. Ft.",
-    workforce: "4,800+ Staff",
-    keyClients: "Fortune 500 Corporate Towers & Tech Parks",
-    activeNodes: ["Gurugram", "Noida", "New Delhi", "Chandigarh"],
-    status: "COMMAND CENTER ACTIVE",
-    accent: "text-sky-400 border-sky-500/30 bg-sky-500/10",
-  },
-  {
-    id: "west",
-    region: "WEST ZONE",
-    primaryHub: "Mumbai & Pune Metro",
-    sqft: "7.2M Sq. Ft.",
-    workforce: "5,500+ Staff",
-    keyClients: "Financial Hubs, Luxury Commercial & Residential",
-    activeNodes: ["Mumbai Central", "BKC", "Navi Mumbai", "Pune"],
-    status: "LIVE SURVEILLANCE",
-    accent: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-  },
-  {
-    id: "south",
-    region: "SOUTH ZONE",
-    primaryHub: "Bengaluru & Hyderabad",
-    sqft: "5.1M Sq. Ft.",
-    workforce: "3,900+ Staff",
-    keyClients: "IT Campuses & Specialized Industrial Hubs",
-    activeNodes: ["Bengaluru", "Hyderabad", "Chennai"],
-    status: "AUTOMATED LOGISTICS",
-    accent: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-  },
-  {
-    id: "east",
-    region: "EAST ZONE",
-    primaryHub: "Kolkata Hub (HQ)",
-    sqft: "2.8M Sq. Ft.",
-    workforce: "2,000+ Staff",
-    keyClients: "Commercial Headquarters & Healthcare Infra",
-    activeNodes: ["Kolkata", "Howrah", "Durgapur"],
-    status: "FOUNDATIONAL REGION",
-    accent: "text-amber-400 border-amber-500/30 bg-amber-500/10",
-  },
-];
+import { REGIONAL_HUBS, HOTSPOTS } from "@/constants/demoData";
 
-// --- Building Hotspots Data ---
-const HOTSPOTS = [
-  {
-    id: "hvac",
-    name: "Central HVAC & Chillers",
-    x: "32%",
-    y: "28%",
-    icon: Wrench,
-    metric: "100% Thermal Balance",
-    detail:
-      "Automated BMS monitoring with predictive compressor vibration alerts.",
-  },
-  {
-    id: "security",
-    name: "Perimeter Gate Control",
-    x: "70%",
-    y: "75%",
-    icon: ShieldCheck,
-    metric: "ANPR Activated",
-    detail: "Automated vehicle badge verification and digital visitor logging.",
-  },
-  {
-    id: "power",
-    name: "High-Voltage DG Power",
-    x: "22%",
-    y: "65%",
-    icon: Zap,
-    metric: "< 8 Sec Cutover",
-    detail: "Dual-redundant fuel logging and emergency grid failover testing.",
-  },
-  {
-    id: "surveillance",
-    name: "Central Command Room",
-    x: "55%",
-    y: "42%",
-    icon: Radio,
-    metric: "24/7 CCTV Telemetry",
-    detail:
-      "AI-driven motion analytics integrated with incident escalation dispatch.",
-  },
-];
-
-export default function PanIndiaOps() {
+export const PanIndiaOps = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeView, setActiveView] = useState<"nodes" | "blueprint">("nodes");
   const [selectedHub, setSelectedHub] = useState<number>(0);
@@ -313,7 +225,7 @@ export default function PanIndiaOps() {
 
                   <div>
                     <h4 className="mb-3 font-mono text-xs uppercase tracking-widest text-slate-400">
-                      // ACTIVE METROPOLITAN NODES
+                      {"// ACTIVE METROPOLITAN NODES"}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {currentHub.activeNodes.map((city) => (
@@ -356,7 +268,7 @@ export default function PanIndiaOps() {
               {/* Interactive Building Blueprint Canvas */}
               <div className="relative min-h-[380px] w-full rounded-sm border border-slate-800 bg-slate-950/90 p-6 backdrop-blur-xl lg:col-span-7">
                 <div className="pointer-events-none absolute left-3 top-3 font-mono text-[10px] text-slate-500">
-                  // PROPERTY ASSET BLUEPRINT
+                  {"// PROPERTY ASSET BLUEPRINT"}
                 </div>
 
                 {/* Abstract Architectural Blueprint SVG */}

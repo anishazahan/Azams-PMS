@@ -12,7 +12,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PinnedShowcase() {
+export const PinnedShowcase = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -80,7 +80,7 @@ export default function PinnedShowcase() {
           </div>
 
           <p className="max-w-md font-mono text-xs leading-relaxed text-slate-400">
-            // SCROLL HORIZONTALLY TO EXPLORE // Standardized operating
+            {"// SCROLL HORIZONTALLY TO EXPLORE //"} Standardized operating
             procedures across every layer of commercial & residential property
             management.
           </p>

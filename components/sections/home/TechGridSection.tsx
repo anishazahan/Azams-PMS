@@ -20,7 +20,7 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function TechGridSection() {
+export const TechGridSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -70,7 +70,7 @@ export default function TechGridSection() {
           </h2>
 
           <p className="bento-anim-item mt-4 font-mono text-sm leading-relaxed text-slate-400">
-            // Modern property management demands more than manual logs. We
+            {"// Modern property management demands more than manual logs. "}We
             combine automated sensor diagnostics, digital workforce attendance,
             and instantaneous escalation dispatch.
           </p>

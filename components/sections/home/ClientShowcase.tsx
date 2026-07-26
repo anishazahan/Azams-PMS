@@ -18,67 +18,9 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- Enterprise Client Logos Data ---
-const CLIENT_LOGOS = [
-  "DLF CyberCity",
-  "Godrej Properties",
-  "Prestige Group",
-  "Tata Realty",
-  "Embassy TechVillage",
-  "Brigade Group",
-  "Oberoi Realty",
-  "Hiranandani",
-  "RMZ Corp",
-  "K Raheja Corp",
-];
+import { CLIENT_LOGOS, CASE_STUDIES } from "@/constants/demoData";
 
-// --- Case Studies Portfolio Data ---
-const CASE_STUDIES = [
-  {
-    id: "tech-park",
-    title: "1.8M Sq. Ft. IT Park Operational Overhaul",
-    category: "COMMERCIAL IT PARK",
-    location: "Bengaluru, Karnataka",
-    metrics: [
-      { label: "Energy Cost Reduced", value: "18.4%" },
-      { label: "Uptime Guaranteed", value: "99.99%" },
-      { label: "Personnel Deployed", value: "450+ Staff" },
-    ],
-    summary:
-      "Integrated MEP management and automated HVAC chiller balancing reduced peak energy demand while ensuring 100% SLA compliance across 14 commercial towers.",
-    tagColor: "text-sky-400 border-sky-500/30 bg-sky-500/10",
-  },
-  {
-    id: "commercial-tower",
-    title: "Grade-A Financial Headquarters Security",
-    category: "FINANCIAL HUB",
-    location: "BKC, Mumbai",
-    metrics: [
-      { label: "Visitor Throughput", value: "12K/Day" },
-      { label: "Incident Rate", value: "0.00%" },
-      { label: "Guarding Force", value: "220+ Guards" },
-    ],
-    summary:
-      "Deployed ex-servicemen security teams backed by AI license plate recognition and digital visitor credentialing for zero perimeter vulnerabilities.",
-    tagColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-  },
-  {
-    id: "township",
-    title: "Premium 250-Acre Residential Township",
-    category: "RESIDENTIAL ESTATE",
-    location: "Gurugram, Haryana",
-    metrics: [
-      { label: "Landscape Cover", value: "45 Acres" },
-      { label: "Resident Rating", value: "4.92/5.0" },
-      { label: "Water Recycled", value: "100%" },
-    ],
-    summary:
-      "Complete integrated facilities execution covering horticulture, automated irrigation, pool chemistry management, and mechanized sanitation.",
-    tagColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-  },
-];
-
-export default function ClientShowcase() {
+export const ClientShowcase = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeCase, setActiveCase] = useState<number>(0);
 
@@ -133,8 +75,7 @@ export default function ClientShowcase() {
           </h2>
 
           <p className="showcase-anim-item mt-4 font-mono text-sm leading-relaxed text-slate-400">
-            // Over 23+ years of continuous service excellence across 20M+ sq.
-            ft. of Grade-A commercial and residential infrastructure[cite: 1].
+            {"// Over 23+ years of continuous service excellence across 20M+ sq. ft. of Grade-A commercial and residential infrastructure[cite: 1]."}
           </p>
         </div>
       </Container>

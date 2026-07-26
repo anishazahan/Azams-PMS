@@ -23,7 +23,7 @@ const socials = [
   { icon: LinkedInIcon, href: SITE.socials.linkedin, label: "LinkedIn" },
 ];
 
-export default function Footer() {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const primaryPhone = SITE.phones?.[0] || "+91 98765 43210";
   const formattedPhone = primaryPhone.replace(/\s/g, "");
@@ -107,7 +107,7 @@ export default function Footer() {
             {/* Column 2: Navigation Links */}
             <div className="lg:col-span-2">
               <h3 className="font-mono text-xs uppercase tracking-widest text-slate-400">
-                // NAVIGATE
+                {"// NAVIGATE"}
               </h3>
               <ul className="mt-4 flex flex-col gap-2.5 font-mono text-xs">
                 {NAV_ITEMS.map((item) => (
@@ -127,7 +127,7 @@ export default function Footer() {
             {/* Column 3: Corporate Links */}
             <div className="lg:col-span-2">
               <h3 className="font-mono text-xs uppercase tracking-widest text-slate-400">
-                // COMPANY
+                {"// COMPANY"}
               </h3>
               <ul className="mt-4 flex flex-col gap-2.5 font-mono text-xs">
                 {FOOTER_LINKS.company.map((item) => (
@@ -147,7 +147,7 @@ export default function Footer() {
             {/* Column 4: Contact Telemetry */}
             <div className="lg:col-span-4">
               <h3 className="font-mono text-xs uppercase tracking-widest text-slate-400">
-                // CENTRAL CONTACT
+                {"// CENTRAL CONTACT"}
               </h3>
               <ul className="mt-4 flex flex-col gap-3.5 text-xs text-slate-300">
                 <li className="flex items-start gap-3">

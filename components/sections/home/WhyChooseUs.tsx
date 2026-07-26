@@ -10,7 +10,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WhyChooseUs() {
+export const WhyChooseUs = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
                             )}
                           </div>
                           <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                            VALUE // {String(i + 1).padStart(2, "0")}
+                            VALUE {"//"} {String(i + 1).padStart(2, "0")}
                           </span>
                         </div>
 
@@ -188,7 +188,7 @@ export default function WhyChooseUs() {
                   >
                     <div>
                       <span className="font-mono text-[10px] uppercase text-sky-400">
-                        VALUE // 0{i + 1}
+                        VALUE {"//"} 0{i + 1}
                       </span>
                       <h3 className="mt-2 text-base font-bold text-white">
                         {fallback.title}
