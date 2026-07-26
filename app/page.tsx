@@ -1,7 +1,9 @@
+import ClientShowcase from "@/components/sections/home/ClientShowcase";
 import Hero from "@/components/sections/home/Hero";
 import PanIndiaOps from "@/components/sections/home/PanIndiaOps";
 import PinnedShowcase from "@/components/sections/home/PinnedShowcase";
 import ServicesSection from "@/components/sections/home/Services";
+import TechGridSection from "@/components/sections/home/TechGridSection";
 import TestimonialsPreview from "@/components/sections/home/TestimonialsPreview";
 import TrustBar from "@/components/sections/home/TrustBar";
 import WhyChooseUs from "@/components/sections/home/WhyChooseUs";
@@ -17,7 +19,9 @@ export default function HomePage() {
       <ServicesSection />
       <PanIndiaOps />
       <PinnedShowcase />
+      <TechGridSection />
       <StatsBand />
+      <ClientShowcase />
       <ProcessSteps />
       <WhyChooseUs />
       <TestimonialsPreview />
