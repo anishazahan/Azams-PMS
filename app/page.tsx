@@ -1,4 +1,5 @@
 import ClientShowcase from "@/components/sections/home/ClientShowcase";
+import ContactCTA from "@/components/sections/home/ContactCTA";
 import Hero from "@/components/sections/home/Hero";
 import PanIndiaOps from "@/components/sections/home/PanIndiaOps";
 import PinnedShowcase from "@/components/sections/home/PinnedShowcase";
@@ -22,8 +23,12 @@ export default function HomePage() {
       <TechGridSection />
       <StatsBand />
       <ClientShowcase />
+
       <ProcessSteps />
       <WhyChooseUs />
+      <div className="bg-red-500">
+        <ContactCTA />
+      </div>
       <TestimonialsPreview />
       <CTASection />
     </>
