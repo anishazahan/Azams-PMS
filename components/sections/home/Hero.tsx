@@ -192,7 +192,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 rounded-sm border border-sky-500/30 bg-sky-500/10 px-3.5 py-1.5 text-xs font-mono uppercase tracking-widest text-sky-400 backdrop-blur-md"
             >
               <Activity className="size-3.5 animate-pulse text-sky-400" />
-              <span>FACILITY INTELLIGENCE PLATFORM • EST. 2001</span>[cite: 1]
+              <span>FACILITY INTELLIGENCE PLATFORM • EST. 2001</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -216,11 +216,10 @@ export default function Hero() {
               className="max-w-xl text-balance text-base leading-relaxed text-slate-300 sm:text-lg"
             >
               Pan-India facility operations engineered for commercial,
-              industrial, and high-density assets[cite: 1]. Safeguard
+              industrial, and high-density assets. Safeguard
               infrastructure, optimize MEP systems, and run high-grade
               operations across{" "}
               <span className="font-semibold text-white">20M+ sq. ft.</span>
-              [cite: 1]
             </motion.p>
 
             {/* Interactive Operational Mode Switcher (Sharp Architecture) */}
@@ -332,21 +331,17 @@ export default function Hero() {
                 <h4 className="text-xl font-bold font-mono text-white sm:text-2xl">
                   20M+
                 </h4>
-                [cite: 1]
                 <p className="text-[11px] font-mono uppercase text-slate-400">
                   Sq. Ft. Pan-India
                 </p>
-                [cite: 1]
               </div>
               <div className="border-r border-slate-800/80 pr-2">
                 <h4 className="text-xl font-bold font-mono text-white sm:text-2xl">
                   15,000+
                 </h4>
-                [cite: 1]
                 <p className="text-[11px] font-mono uppercase text-slate-400">
                   Trained Experts
                 </p>
-                [cite: 1]
               </div>
               <div>
                 <h4 className="text-xl font-bold font-mono text-white sm:text-2xl">

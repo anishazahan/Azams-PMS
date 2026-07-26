@@ -193,7 +193,7 @@ export default function ServicesSection() {
           </div>
 
           <p className="service-header-item max-w-md font-mono text-sm leading-relaxed text-slate-400">
-            // SINGLE-POINT ACCOUNTABILITY: From technical MEP oversight to specialized sanitation, we run integrated operations backed by 23+ years of expertise.[cite: 1]
+            // SINGLE-POINT ACCOUNTABILITY: From technical MEP oversight to specialized sanitation, we run integrated operations backed by 23+ years of expertise.
           </p>
         </div>
 
@@ -216,22 +216,22 @@ export default function ServicesSection() {
                   }`}
                 >
                   {isActive && (
-                    <motion.div
+                    <motion.span
                       layoutId="activeServiceIndicator"
-                      className="absolute bottom-0 left-0 top-0 w-1 bg-sky-400"
+                      className="absolute bottom-0 left-0 top-0 w-1 bg-sky-400 block"
                       transition={{ type: "spring", stiffness: 500, damping: 35 }}
                     />
                   )}
 
-                  <div className="flex items-center gap-3.5 pl-1">
-                    <div className={`rounded-sm p-2 transition-colors ${isActive ? "bg-sky-500/20 text-sky-400" : "bg-slate-800/50 text-slate-400 group-hover:text-slate-200"}`}>
+                  <span className="flex items-center gap-3.5 pl-1">
+                    <span className={`rounded-sm p-2 transition-colors flex ${isActive ? "bg-sky-500/20 text-sky-400" : "bg-slate-800/50 text-slate-400 group-hover:text-slate-200"}`}>
                       <Icon className="size-5" />
-                    </div>
-                    <div>
+                    </span>
+                    <span className="block text-left">
                       <span className="block font-mono text-[10px] uppercase tracking-wider text-slate-500">{service.category}</span>
-                      <span className="text-sm font-semibold tracking-wide">{service.title}</span>
-                    </div>
-                  </div>
+                      <span className="block text-sm font-semibold tracking-wide">{service.title}</span>
+                    </span>
+                  </span>
 
                   <ChevronRight className={`size-4 transition-transform duration-300 ${isActive ? "translate-x-1 text-sky-400" : "text-slate-600 group-hover:text-slate-400"}`} />
                 </button>

@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/home/Hero";
+import PanIndiaOps from "@/components/sections/home/PanIndiaOps";
 import PinnedShowcase from "@/components/sections/home/PinnedShowcase";
 import ServicesSection from "@/components/sections/home/Services";
 import TestimonialsPreview from "@/components/sections/home/TestimonialsPreview";
@@ -13,7 +14,9 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
-      <ServicesSection /> <PinnedShowcase />
+      <ServicesSection />
+      <PanIndiaOps />
+      <PinnedShowcase />
       <StatsBand />
       <ProcessSteps />
       <WhyChooseUs />
