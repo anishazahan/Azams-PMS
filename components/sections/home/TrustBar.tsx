@@ -1,7 +1,7 @@
-import { CLIENT_SECTORS } from "@/data/clients";
 import Container from "@/components/ui/Container";
 import Marquee from "@/components/ui/Marquee";
 import Reveal from "@/components/ui/Reveal";
+import { CLIENT_SECTORS } from "@/data/clients";
 
 export default function TrustBar() {
   return (
