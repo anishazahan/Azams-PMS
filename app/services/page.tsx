@@ -1,5 +1,5 @@
+import ContactCTA from "@/components/sections/home/ContactCTA";
 import { ServiceCard } from "@/components/sections/services/ServiceCard";
-import CTASection from "@/components/sections/shared/CTASection";
 import PageHero from "@/components/sections/shared/PageHero";
 import { ProcessSteps } from "@/components/sections/shared/ProcessSteps";
 import Container from "@/components/ui/Container";
@@ -35,9 +35,17 @@ export default function ServicesPage() {
       </section>
 
       <ProcessSteps />
-      <CTASection
-        title="Not sure which services you need?"
-        description="Share your property details and we'll recommend the right service mix during a free audit."
+      <ContactCTA
+        eyebrow="MULTI-SERVICE SLA DEPLOYMENT"
+        title={
+          <>
+            Need an integrated multi-service <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              contract for your facility?
+            </span>
+          </>
+        }
+        description="Bundle MEP engineering, security guarding, and mechanized housekeeping under a single-point accountable agreement with customized SLAs."
       />
     </>
   );

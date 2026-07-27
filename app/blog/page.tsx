@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { BLOG_POSTS } from "@/data/blog";
+import BlogCard from "@/components/sections/blog/BlogCard";
+import ContactCTA from "@/components/sections/home/ContactCTA";
+import PageHero from "@/components/sections/shared/PageHero";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import PageHero from "@/components/sections/shared/PageHero";
-import BlogCard from "@/components/sections/blog/BlogCard";
-import CTASection from "@/components/sections/shared/CTASection";
+import { BLOG_POSTS } from "@/data/blog";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,8 +32,18 @@ export default function BlogPage() {
           </div>
         </Container>
       </section>
-
-      <CTASection />
+      <ContactCTA
+        eyebrow="FACILITY KNOWLEDGE DIRECTORY"
+        title={
+          <>
+            Need customized SOPs for <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              your enterprise property?
+            </span>
+          </>
+        }
+        description="Book a technical audit with our chief engineers to benchmark your current property operations against industry-leading facility metrics."
+      />
     </>
   );
 }

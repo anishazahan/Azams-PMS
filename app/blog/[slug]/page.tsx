@@ -1,14 +1,17 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { Calendar, ChevronRight, Clock } from "lucide-react";
-import { BLOG_POSTS, getBlogPostBySlug } from "@/data/blog";
+import ContactCTA from "@/components/sections/home/ContactCTA";
 import Container from "@/components/ui/Container";
+import {
+  GridBackdrop,
+  MeshBackdrop,
+} from "@/components/ui/DecorativeBackground";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/ui/Reveal";
 import TextReveal from "@/components/ui/TextReveal";
-import { GridBackdrop, MeshBackdrop } from "@/components/ui/DecorativeBackground";
-import CTASection from "@/components/sections/shared/CTASection";
+import { BLOG_POSTS, getBlogPostBySlug } from "@/data/blog";
+import { Calendar, ChevronRight, Clock } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -71,7 +74,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               text={post.title}
               className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl"
             />
-            <Reveal delay={0.15} className="flex items-center gap-5 text-sm text-muted">
+            <Reveal
+              delay={0.15}
+              className="flex items-center gap-5 text-sm text-muted"
+            >
               <span>{post.author}</span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="size-3.5" aria-hidden="true" />
@@ -100,9 +106,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </Container>
       </section>
 
-      <CTASection
-        title="Want Amaze-level discipline on your property?"
-        description="Talk to our team about a service audit tailored to your facility."
+      <ContactCTA
+        eyebrow="TECHNICAL CONSULTATION"
+        title={
+          <>
+            Need customized MEP SOPs for <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              your facility infrastructure?
+            </span>
+          </>
+        }
+        description="Book a zero-cost technical audit with our chief engineers to evaluate your current MEP, HVAC, and power grid health."
       />
     </>
   );

@@ -1,8 +1,8 @@
+import ContactCTA from "@/components/sections/home/ContactCTA";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
 import { ServiceDeliverables } from "@/components/sections/services/ServiceDeliverables";
 import { ServiceDetailHero } from "@/components/sections/services/ServiceDetailHero";
 import { ServiceFeatures } from "@/components/sections/services/ServiceFeatures";
-import CTASection from "@/components/sections/shared/CTASection";
 import { SERVICES, getServiceBySlug } from "@/data/services";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -45,9 +45,17 @@ const ServiceDetailPage = async ({ params }: ServicePageProps) => {
       <ServiceFeatures service={service} />
       <ServiceDeliverables service={service} />
       <RelatedServices currentSlug={service.slug} />
-      <CTASection
-        title={`Ready to deploy ${service.shortName || service.name} for your property?`}
-        description="Connect with our technical operations directors for a zero-cost site feasibility audit and SLA proposal."
+      <ContactCTA
+        eyebrow={`${service.shortName || "SERVICE"} DEPLOYMENT AUDIT`}
+        title={
+          <>
+            Ready to deploy{" "}
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              {service.name}?
+            </span>
+          </>
+        }
+        description={`Connect with our technical operations directors for a zero-cost site feasibility audit and custom ${service.shortName || "service"} SLA proposal.`}
       />
     </main>
   );

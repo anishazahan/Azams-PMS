@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import PageHero from "@/components/sections/shared/PageHero";
 import FounderStory from "@/components/sections/about/FounderStory";
 import MissionVision from "@/components/sections/about/MissionVision";
 import Timeline from "@/components/sections/about/Timeline";
+import ContactCTA from "@/components/sections/home/ContactCTA";
+import PageHero from "@/components/sections/shared/PageHero";
 import StatsBand from "@/components/sections/shared/StatsBand";
-import CTASection from "@/components/sections/shared/CTASection";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -24,9 +24,17 @@ export default function AboutPage() {
       <MissionVision />
       <Timeline />
       <StatsBand />
-      <CTASection
-        title="See how we'd run your property."
-        description="Share a few details about your site and our team will map out a service blueprint within 48 hours."
+      <ContactCTA
+        eyebrow="STRATEGIC PARTNERSHIP"
+        title={
+          <>
+            Partner with India’s Most <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              Disciplined Facility Partner.
+            </span>
+          </>
+        }
+        description="Schedule an executive meeting with our operations board to discuss nationwide property management, multi-site technical audits, or customized SLA deployments."
       />
     </>
   );

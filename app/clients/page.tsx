@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import PageHero from "@/components/sections/shared/PageHero";
-import StatsBand from "@/components/sections/shared/StatsBand";
 import ClientSectorGrid from "@/components/sections/clients/ClientSectorGrid";
 import RegionalPresence from "@/components/sections/clients/RegionalPresence";
+import ContactCTA from "@/components/sections/home/ContactCTA";
 import { TestimonialSection } from "@/components/sections/home/TestimonialsPreview";
-import CTASection from "@/components/sections/shared/CTASection";
+import PageHero from "@/components/sections/shared/PageHero";
+import StatsBand from "@/components/sections/shared/StatsBand";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Clients",
@@ -24,9 +24,17 @@ export default function ClientsPage() {
       <ClientSectorGrid />
       <RegionalPresence />
       <TestimonialSection />
-      <CTASection
-        title="Join 200+ properties running on Amaze."
-        description="Let's discuss how an integrated service model can simplify your facility operations."
+      <ContactCTA
+        eyebrow="FACILITY RECRUITMENT HUB"
+        title={
+          <>
+            Looking to recruit staff for <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              your commercial facility?
+            </span>
+          </>
+        }
+        description="Book a consultation with our workforce directors to deploy trained security marshals, MEP engineers, or mechanized housekeeping teams."
       />
     </>
   );

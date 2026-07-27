@@ -4,23 +4,25 @@ import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  ArrowRight,
-  Building2,
-  Calculator,
-  Factory,
-  Home,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowRight, Calculator, ShieldCheck } from "lucide-react";
 import { useRef, useState } from "react";
 
 import Container from "@/components/ui/Container";
+import { PROPERTY_TYPES, SQFT_RANGES } from "@/constants/demoData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-import { PROPERTY_TYPES, SQFT_RANGES } from "@/constants/demoData";
+interface ContactCTAProps {
+  eyebrow?: string;
+  title?: React.ReactNode;
+  description?: string;
+}
 
-export const ContactCTA = () => {
+export const ContactCTA = ({
+  eyebrow = "FACILITY AUDIT CONFIGURATOR",
+  title,
+  description = "Request a comprehensive zero-cost technical audit of your property. Our engineering and security teams will evaluate your current MEP infrastructure, security protocols, and operational expenditures.",
+}: ContactCTAProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedType, setSelectedType] = useState(PROPERTY_TYPES[0].id);
   const [selectedSize, setSelectedSize] = useState(SQFT_RANGES[1]);
@@ -30,7 +32,10 @@ export const ContactCTA = () => {
     () => {
       if (!sectionRef.current) return;
 
-      gsap.from(".cta-anim-item", {
+      const elements = sectionRef.current.querySelectorAll(".cta-anim-item");
+      if (elements.length === 0) return;
+
+      gsap.from(elements, {
         y: 40,
         opacity: 0,
         stagger: 0.15,
@@ -48,9 +53,19 @@ export const ContactCTA = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call for the assignment
+    // Simulate API call
     setTimeout(() => setIsSubmitting(false), 1500);
   };
+
+  // Default title fallback if no title prop is passed
+  const defaultTitle = (
+    <>
+      Ready to upgrade your <br />
+      <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+        facility SLA baseline?
+      </span>
+    </>
+  );
 
   return (
     <section
@@ -64,6 +79,7 @@ export const ContactCTA = () => {
       <Container className="relative z-10 mx-auto max-w-5xl">
         {/* Conversion Hub Layout */}
         <div className="relative rounded-sm border border-slate-800 bg-slate-900/60 p-8 shadow-2xl backdrop-blur-xl md:p-12">
+          {/* Tactical Corner Crosshairs */}
           <div className="pointer-events-none absolute left-3 top-3 font-mono text-[10px] text-sky-500/40">
             +
           </div>
@@ -78,25 +94,19 @@ export const ContactCTA = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            {/* Left Content: Value Proposition */}
+            {/* Left Content: Dynamic Value Proposition */}
             <div className="flex flex-col justify-center">
-              <div className="cta-anim-item mb-5 inline-flex items-center gap-2 rounded-sm border border-sky-500/30 bg-sky-500/10 px-3.5 py-1.5 text-xs font-mono uppercase tracking-widest text-sky-400 backdrop-blur-md w-fit">
+              <div className="cta-anim-item mb-5 inline-flex w-fit items-center gap-2 rounded-sm border border-sky-500/30 bg-sky-500/10 px-3.5 py-1.5 font-mono text-xs uppercase tracking-widest text-sky-400 backdrop-blur-md">
                 <Calculator className="size-3.5" />
-                <span>FACILITY AUDIT CONFIGURATOR</span>
+                <span>{eyebrow}</span>
               </div>
 
               <h2 className="cta-anim-item text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl">
-                Ready to upgrade your <br />
-                <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
-                  facility SLA baseline?
-                </span>
+                {title || defaultTitle}
               </h2>
 
               <p className="cta-anim-item mt-5 text-balance text-sm leading-relaxed text-slate-300">
-                Request a comprehensive zero-cost technical audit of your
-                property. Our engineering and security teams will evaluate your
-                current MEP infrastructure, security protocols, and operational
-                expenditures.
+                {description}
               </p>
 
               <div className="cta-anim-item mt-8 flex flex-col gap-4 border-t border-slate-800/80 pt-6">
@@ -221,4 +231,6 @@ export const ContactCTA = () => {
       </Container>
     </section>
   );
-}
+};
+
+export default ContactCTA;

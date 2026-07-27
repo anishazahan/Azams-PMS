@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import PageHero from "@/components/sections/shared/PageHero";
 import CareerBenefits from "@/components/sections/careers/CareerBenefits";
 import JobListings from "@/components/sections/careers/JobListings";
-import CTASection from "@/components/sections/shared/CTASection";
+import ContactCTA from "@/components/sections/home/ContactCTA";
+import PageHero from "@/components/sections/shared/PageHero";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -20,13 +20,17 @@ export default function CareersPage() {
       />
       <CareerBenefits />
       <JobListings />
-      <CTASection
-        title="Don't see the right role?"
-        description="We're always hiring disciplined operators. Send your resume and we'll reach out when a fit opens up."
-        primaryLabel="Email your resume"
-        primaryHref="mailto:info@amazepms.com?subject=Career%20Enquiry"
-        secondaryLabel="Learn about Amaze"
-        secondaryHref="/about"
+      <ContactCTA
+        eyebrow="TALENT ACQUISITION"
+        title={
+          <>
+            Don’t see your role listed? <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              Submit your profile to our talent pool.
+            </span>
+          </>
+        }
+        description="We are continuously recruiting certified chief engineers, security marshals, and facility managers across 20+ metropolitan nodes in India."
       />
     </>
   );

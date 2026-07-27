@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { TESTIMONIALS } from "@/data/testimonials";
+import ContactCTA from "@/components/sections/home/ContactCTA";
+import PageHero from "@/components/sections/shared/PageHero";
+import StatsBand from "@/components/sections/shared/StatsBand";
+import TestimonialCard from "@/components/sections/shared/TestimonialCard";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import PageHero from "@/components/sections/shared/PageHero";
-import TestimonialCard from "@/components/sections/shared/TestimonialCard";
-import StatsBand from "@/components/sections/shared/StatsBand";
-import CTASection from "@/components/sections/shared/CTASection";
+import { TESTIMONIALS } from "@/data/testimonials";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -35,7 +35,18 @@ export default function TestimonialsPage() {
       </section>
 
       <StatsBand />
-      <CTASection />
+      <ContactCTA
+        eyebrow="VERIFIED SLA PERFORMANCE"
+        title={
+          <>
+            Want to benchmark your property <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              against enterprise standards?
+            </span>
+          </>
+        }
+        description="Schedule a technical facility walkthrough with our quality assurance team to evaluate your current service provider's performance and SLA metrics."
+      />
     </>
   );
 }
