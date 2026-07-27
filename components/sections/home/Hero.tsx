@@ -6,13 +6,7 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Activity,
-  ArrowUpRight,
-  Building2,
-  CheckCircle2,
-  Wrench,
-} from "lucide-react";
+import { Activity, Building2, CheckCircle2, Wrench } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -359,12 +353,8 @@ export const Hero = () => {
               className="flex flex-wrap items-center gap-4 pt-2"
             >
               <MagneticButton>
-                <Button
-                  size="lg"
-                  className="group rounded-sm bg-sky-400 font-semibold text-slate-950 shadow-md shadow-sky-500/20 hover:bg-sky-300"
-                >
-                  <span>Request Service Audit</span>
-                  <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <Button size="lg" variant="tactical" withArrow>
+                  Request Service Audit
                 </Button>
               </MagneticButton>
 

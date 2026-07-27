@@ -4,13 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Activity,
-  ArrowUpRight,
-  Building2,
-  Layers,
-  MapPin,
-} from "lucide-react";
+import { Activity, Building2, Layers, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
 
 import Button from "@/components/ui/Button";
@@ -240,12 +234,8 @@ export const PanIndiaOps = () => {
                     <span className="font-mono text-xs text-slate-400">
                       Request regional site deployment feasibility report?
                     </span>
-                    <Button
-                      size="sm"
-                      className="rounded-sm bg-sky-400 font-semibold text-slate-950 hover:bg-sky-300"
-                    >
-                      <span>Request Feasibility Study</span>
-                      <ArrowUpRight className="ml-1 size-3.5" />
+                    <Button size="sm" variant="tactical" withArrow>
+                      Request Feasibility Study
                     </Button>
                   </div>
                 </div>

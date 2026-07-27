@@ -1,12 +1,7 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import type { Service } from "@/types";
-import {
-  Activity,
-  ArrowUpRight,
-  ChevronRight,
-  ShieldCheck,
-} from "lucide-react";
+import { Activity, ChevronRight, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 export const ServiceDetailHero = ({ service }: { service: Service }) => {
@@ -55,13 +50,8 @@ export const ServiceDetailHero = ({ service }: { service: Service }) => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <Button
-                href="/contact"
-                size="lg"
-                className="group rounded-sm bg-sky-400 font-semibold text-slate-950 hover:bg-sky-300"
-              >
-                <span>Deploy This Division</span>
-                <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <Button href="/contact" size="lg" variant="tactical" withArrow>
+                Deploy This Division
               </Button>
               <Button
                 href="/services"

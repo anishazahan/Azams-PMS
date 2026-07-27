@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "tactical";
 type Size = "sm" | "md" | "lg";
 
 interface CommonProps {
@@ -26,6 +26,8 @@ const variantClasses: Record<Variant, string> = {
   outline:
     "border border-surface-border bg-white/[0.03] text-foreground hover:bg-white/[0.08] hover:border-white/20",
   ghost: "text-foreground hover:bg-white/[0.06]",
+  tactical:
+    "rounded-sm bg-sky-400 font-semibold text-slate-950 shadow-md shadow-sky-500/20 hover:bg-sky-300 disabled:opacity-70 disabled:pointer-events-none",
 };
 
 const sizeClasses: Record<Size, string> = {

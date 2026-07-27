@@ -4,13 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  ArrowUpRight,
-  Award,
-  Building2,
-  CheckCircle2,
-  TrendingUp,
-} from "lucide-react";
+import { Award, CheckCircle2, TrendingUp } from "lucide-react";
 import { useRef, useState } from "react";
 
 import Button from "@/components/ui/Button";
@@ -18,7 +12,7 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-import { CLIENT_LOGOS, CASE_STUDIES } from "@/constants/demoData";
+import { CASE_STUDIES } from "@/constants/demoData";
 
 export const ClientShowcase = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,30 +70,12 @@ export const ClientShowcase = () => {
           </h2>
 
           <p className="showcase-anim-item mt-4 font-mono text-sm leading-relaxed text-slate-400">
-            {"// Over 23+ years of continuous service excellence across 20M+ sq. ft. of Grade-A commercial and residential infrastructure."}
+            {
+              "// Over 23+ years of continuous service excellence across 20M+ sq. ft. of Grade-A commercial and residential infrastructure."
+            }
           </p>
         </div>
       </Container>
-
-      {/* INFINITE DUAL-DIRECTION MARQUEE */}
-      <div className="showcase-anim-item relative mb-20 w-full overflow-hidden border-y border-slate-800/80 bg-slate-900/40 py-4 backdrop-blur-md">
-        {/* Left/Right Gradient Mask for Marquee */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-slate-950 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-slate-950 to-transparent" />
-
-        {/* Marquee Track 1 (Left Direction) */}
-        <div className="flex w-max animate-marquee gap-8">
-          {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((client, idx) => (
-            <div
-              key={`client-m1-${idx}`}
-              className="flex items-center gap-2 rounded-sm border border-slate-800/80 bg-slate-950/80 px-5 py-2.5 font-mono text-xs font-semibold text-slate-300 backdrop-blur-sm"
-            >
-              <Building2 className="size-3.5 text-sky-400" />
-              <span>{client.toUpperCase()}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* INTERACTIVE CASE STUDY SECTION */}
       <Container className="relative z-10">
@@ -212,12 +188,8 @@ export const ClientShowcase = () => {
                     <CheckCircle2 className="size-4 text-emerald-400" />
                     <span>Verified Client SLA Audit Verified</span>
                   </div>
-                  <Button
-                    size="sm"
-                    className="rounded-sm bg-sky-400 font-semibold text-slate-950 hover:bg-sky-300"
-                  >
-                    <span>Download Case Study PDF</span>
-                    <ArrowUpRight className="ml-1 size-3.5" />
+                  <Button size="sm" variant="tactical" withArrow>
+                    Download Case Study PDF
                   </Button>
                 </div>
               </motion.div>
@@ -227,4 +199,4 @@ export const ClientShowcase = () => {
       </Container>
     </section>
   );
-}
+};

@@ -77,7 +77,7 @@ export default function MobileMenu({
                   <Link
                     href={item.href}
                     className={cn(
-                      "block border-b border-surface-border py-4 text-3xl font-medium tracking-tight",
+                      "block border-b border-surface-border py-3 text-xl font-medium tracking-tight",
                       isActive ? "text-foreground" : "text-muted",
                     )}
                   >
@@ -98,8 +98,14 @@ export default function MobileMenu({
               ease: EASE_PREMIUM,
             }}
           >
-            <Button href="/contact" size="lg" className="w-full">
-              Get in touch
+            <Button
+              href="/contact"
+              size="lg"
+              variant="tactical"
+              withArrow
+              className="w-full font-mono text-xs uppercase tracking-wider"
+            >
+              Request Audit
             </Button>
           </motion.div>
         </motion.div>

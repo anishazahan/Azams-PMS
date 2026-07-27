@@ -10,8 +10,8 @@ export const SITE = {
   url: "https://www.amazepms.com",
   foundedYear: 2001,
   parentGroup: "ACTION Group of Companies",
-  email: "info@amazepms.com",
-  phones: ["+91 91006 94137", "+91 99085 38137"],
+  email: "anishazahan13@gmail.com",
+  phones: ["+8801301902371", "+91 99085 38137"],
   address: {
     line1: "4th Floor, High Mark Chambers",
     line2: "Khajaguda X Road, Cyberabad",

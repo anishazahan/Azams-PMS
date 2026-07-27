@@ -17,6 +17,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
+        border
         eyebrow="Our Services"
         title="Every service line, one accountable team."
         description="From security to swimming pool maintenance, our in-house teams deliver eight integrated service lines to a single documented standard."

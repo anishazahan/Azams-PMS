@@ -25,7 +25,7 @@ const socials = [
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const primaryPhone = SITE.phones?.[0] || "+91 98765 43210";
+  const primaryPhone = SITE.phones?.[0] || "+8801301902371";
   const formattedPhone = primaryPhone.replace(/\s/g, "");
 
   return (
@@ -194,7 +194,11 @@ export const Footer = () => {
         {/* Bottom Sub-Footer Bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-slate-800/80 pt-6 font-mono text-xs text-slate-500 sm:flex-row">
           <p>
-            © {currentYear} {SITE.legalName}. All rights reserved.
+            © {currentYear} {SITE.legalName}. All rights reserved BY{" "}
+            <span className="text-emerald-400 font-semibold text-sm">
+              Anisha Zahan
+            </span>
+            .
           </p>
 
           <div className="flex items-center gap-2">
@@ -205,4 +209,4 @@ export const Footer = () => {
       </Container>
     </footer>
   );
-}
+};

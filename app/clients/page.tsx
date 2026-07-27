@@ -16,6 +16,7 @@ const ClientsPage = () => {
   return (
     <main className="relative min-h-screen bg-slate-950 text-slate-100">
       <PageHero
+        border
         eyebrow="ENTERPRISE PARTNERSHIPS"
         title="Trusted by 200+ Properties, Pan-India."
         description="From IT tech parks to residential townships, our client partnerships span every asset class and scale."

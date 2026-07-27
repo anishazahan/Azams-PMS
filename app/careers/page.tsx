@@ -15,6 +15,7 @@ const CareersPage = () => {
   return (
     <main className="relative min-h-screen bg-slate-950 text-slate-100">
       <PageHero
+        border
         eyebrow="RECRUITMENT & TALENT GRID"
         title="Build Your Career on Real Operations."
         description="From site supervisors to regional operations directors, our teams grow bottom-up — trained with military SOPs, promoted, and retained."

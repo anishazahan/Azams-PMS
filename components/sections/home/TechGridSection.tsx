@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Activity,
-  ArrowUpRight,
   Clock,
   Cpu,
   FileCheck2,
@@ -228,12 +227,8 @@ export const TechGridSection = () => {
               <span className="font-mono text-xs text-slate-400">
                 Request demo login
               </span>
-              <Button
-                size="sm"
-                className="rounded-sm bg-sky-400 font-semibold text-slate-950 hover:bg-sky-300"
-              >
-                <span>View Portal</span>
-                <ArrowUpRight className="ml-1 size-3.5" />
+              <Button size="sm" variant="tactical" withArrow>
+                View Portal
               </Button>
             </div>
           </motion.div>

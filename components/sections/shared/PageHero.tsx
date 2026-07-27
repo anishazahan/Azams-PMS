@@ -56,6 +56,7 @@ interface PageHeroProps {
   title: string;
   description?: string;
   children?: ReactNode;
+  border?: boolean;
 }
 
 export const PageHero = ({
@@ -63,6 +64,7 @@ export const PageHero = ({
   title,
   description,
   children,
+  border,
 }: PageHeroProps) => {
   const heroRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -98,7 +100,7 @@ export const PageHero = ({
   return (
     <section
       ref={heroRef}
-      className="relative mb-10 w-full overflow-hidden  border-slate-800 bg-slate-950 pb-20 pt-36 sm:pb-28 sm:pt-44"
+      className={`relative mb-10 w-full overflow-hidden   border-slate-800 bg-slate-950 pb-20 pt-36 sm:pb-28 sm:pt-44 ${border && "border-b"}`}
     >
       {/* 1. Tactical Laser Grid Backdrop */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#1e293b20_1px,transparent_1px),linear-gradient(to_bottom,#1e293b20_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />

@@ -8,7 +8,7 @@ import { ROUTES } from "@/constants/routes";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -127,10 +127,11 @@ export default function Header() {
                   <Button
                     href="/contact"
                     size="sm"
-                    className="group rounded-sm bg-sky-400 font-mono text-xs uppercase tracking-wider text-slate-950 hover:bg-sky-300"
+                    variant="tactical"
+                    withArrow
+                    className="font-mono text-xs uppercase tracking-wider"
                   >
-                    <span>Request Audit</span>
-                    <ArrowUpRight className="ml-1 size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    Request Audit
                   </Button>
                 </MagneticButton>
               </div>

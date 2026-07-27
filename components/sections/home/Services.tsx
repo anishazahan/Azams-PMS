@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
 
 import Button from "@/components/ui/Button";
@@ -151,7 +151,7 @@ export const ServicesSection = () => {
                 transition={{ duration: 0.25 }}
                 className="flex flex-col gap-6"
               >
-                <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+                <div className="flex items-center gap-4 justify-between border-b border-slate-800/80 pb-4">
                   <span
                     className={`rounded-sm border px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider ${activeService.tagColor}`}
                   >
@@ -208,12 +208,8 @@ export const ServicesSection = () => {
                   <div className="font-mono text-xs text-slate-400">
                     Need customized SLAs for your property?
                   </div>
-                  <Button
-                    size="sm"
-                    className="rounded-sm bg-sky-400 font-semibold text-slate-950 hover:bg-sky-300"
-                  >
-                    <span>Configure Service SLA</span>
-                    <ArrowUpRight className="ml-1 size-3.5" />
+                  <Button size="sm" variant="tactical" withArrow>
+                    Configure Service SLA
                   </Button>
                 </div>
               </motion.div>
