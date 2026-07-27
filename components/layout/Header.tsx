@@ -4,22 +4,16 @@ import MobileMenu from "@/components/layout/MobileMenu";
 import Button from "@/components/ui/Button";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { NAV_ITEMS, SITE } from "@/constants/site";
-import { ROUTES } from "@/constants/routes";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { scrollToSelector, scrollToTop } from "@/lib/lenis";
+import { getHomeSectionId, HOME_SCROLL_SECTIONS } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
+import type { NavItem } from "@/types";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-
-// Sections on the home page that double as scroll-triggered nav targets —
-// scrolling into one highlights its matching nav item even though the link
-// itself points to a separate route.
-const HOME_SCROLL_SECTIONS = [
-  { id: "services", href: ROUTES.SERVICES },
-  { id: "clients", href: ROUTES.CLIENTS },
-];
+import { useState, type MouseEvent } from "react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,10 +21,29 @@ export default function Header() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const scrollActiveHref = useScrollSpy(HOME_SCROLL_SECTIONS, pathname === "/");
+  const isHome = pathname === "/";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 16);
   });
+
+  const handleNavClick = (event: MouseEvent, item: NavItem) => {
+    if (!isHome) return;
+
+    if (item.href === "/") {
+      event.preventDefault();
+      scrollToTop();
+      window.history.replaceState(null, "", "/");
+      return;
+    }
+
+    const sectionId = getHomeSectionId(item.href);
+    if (sectionId) {
+      event.preventDefault();
+      scrollToSelector(`#${sectionId}`);
+      window.history.replaceState(null, "", `/#${sectionId}`);
+    }
+  };
 
   return (
     <>
@@ -96,6 +109,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={(event) => handleNavClick(event, item)}
                     className={cn(
                       "relative rounded-sm px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors duration-200",
                       isActive
@@ -153,6 +167,7 @@ export default function Header() {
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         pathname={pathname}
+        scrollActiveHref={scrollActiveHref}
       />
     </>
   );
