@@ -1,23 +1,24 @@
-import FounderStory from "@/components/sections/about/FounderStory";
-import MissionVision from "@/components/sections/about/MissionVision";
-import Timeline from "@/components/sections/about/Timeline";
+import { FounderStory } from "@/components/sections/about/FounderStory";
+import { MissionVision } from "@/components/sections/about/MissionVision";
+import { Timeline } from "@/components/sections/about/Timeline";
 import ContactCTA from "@/components/sections/home/ContactCTA";
+
 import PageHero from "@/components/sections/shared/PageHero";
-import StatsBand from "@/components/sections/shared/StatsBand";
+import { StatsBand } from "@/components/sections/shared/StatsBand";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Amaze PMS",
   description:
     "Founded in 2001 by a Certified Security Practitioner and Indian Navy veteran, Amaze PMS delivers integrated facility management across 20+ million sq. ft. pan-India.",
 };
 
-export default function AboutPage() {
+const AboutPage = () => {
   return (
-    <>
+    <main className="relative min-h-screen bg-slate-950 text-slate-100">
       <PageHero
-        eyebrow="About Amaze"
-        title="Two decades of disciplined facility operations."
+        eyebrow="ABOUT AMAZE"
+        title="Two Decades of Disciplined Operations."
         description="From a single security contract in 2001 to a 15,000-strong workforce managing 20+ million sq. ft. pan-India — our story is one of consistency, not shortcuts."
       />
       <FounderStory />
@@ -36,6 +37,8 @@ export default function AboutPage() {
         }
         description="Schedule an executive meeting with our operations board to discuss nationwide property management, multi-site technical audits, or customized SLA deployments."
       />
-    </>
+    </main>
   );
-}
+};
+
+export default AboutPage;
