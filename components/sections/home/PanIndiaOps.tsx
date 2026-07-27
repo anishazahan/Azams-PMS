@@ -10,10 +10,6 @@ import {
   Building2,
   Layers,
   MapPin,
-  Radio,
-  ShieldCheck,
-  Wrench,
-  Zap,
 } from "lucide-react";
 import { useRef, useState } from "react";
 

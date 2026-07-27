@@ -138,10 +138,9 @@ export const TechGridSection = () => {
               <h3 className="text-xl font-bold text-white">
                 15,000+ Staff Gateway
               </h3>
-              [cite: 1]
               <p className="mt-2 text-xs leading-relaxed text-slate-300">
                 Automated shift tracking and geolocation-verified attendance
-                logging across every commercial site pan-India.[cite: 1]
+                logging across every commercial site pan-India.
               </p>
             </div>
 

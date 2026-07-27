@@ -99,7 +99,7 @@ export const ServiceDetailHero = ({ service }: { service: Service }) => {
               </div>
 
               <span className="font-mono text-xs uppercase tracking-widest text-slate-400">
-                // DIVISION BASELINE
+                {"// DIVISION BASELINE"}
               </span>
               <p className="mt-2 font-mono text-4xl font-extrabold text-white sm:text-5xl">
                 {service.stat?.value || "99.9%"}

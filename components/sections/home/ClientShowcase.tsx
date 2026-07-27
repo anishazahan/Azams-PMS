@@ -52,6 +52,7 @@ export const ClientShowcase = () => {
 
   return (
     <section
+      id="clients"
       ref={sectionRef}
       className="relative w-full overflow-hidden border-t border-slate-800 bg-slate-950 py-24 text-slate-100"
     >
@@ -75,7 +76,7 @@ export const ClientShowcase = () => {
           </h2>
 
           <p className="showcase-anim-item mt-4 font-mono text-sm leading-relaxed text-slate-400">
-            {"// Over 23+ years of continuous service excellence across 20M+ sq. ft. of Grade-A commercial and residential infrastructure[cite: 1]."}
+            {"// Over 23+ years of continuous service excellence across 20M+ sq. ft. of Grade-A commercial and residential infrastructure."}
           </p>
         </div>
       </Container>
@@ -173,7 +174,7 @@ export const ClientShowcase = () => {
                   <span
                     className={`rounded-sm border px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider ${currentCase.tagColor}`}
                   >
-                    {currentCase.category} // CASE STUDY
+                    {currentCase.category} {"// CASE STUDY"}
                   </span>
                   <span className="font-mono text-xs text-slate-500 uppercase">
                     {currentCase.location}

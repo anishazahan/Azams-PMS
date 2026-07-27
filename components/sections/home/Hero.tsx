@@ -18,6 +18,7 @@ import * as THREE from "three";
 
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { OPERATIONAL_MODES } from "@/constants/demoData";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -137,7 +138,7 @@ function Realistic3DPropertyCard({ activeMode }: { activeMode: string }) {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
             </span>
             <span className="whitespace-nowrap uppercase tracking-wider text-slate-200">
-              {activeMode} // 3D NODE ACTIVE
+              {activeMode} {"// 3D NODE ACTIVE"}
             </span>
           </motion.div>
         </Html>
@@ -151,12 +152,15 @@ function FocusedParticleField() {
   const pointsRef = useRef<THREE.Points>(null!);
   const count = 450;
 
-  const positions = new Float32Array(count * 3);
-  for (let i = 0; i < count * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 16;
-    positions[i + 1] = (Math.random() - 0.5) * 16;
-    positions[i + 2] = (Math.random() - 0.5) * 12;
-  }
+  const [positions] = useState(() => {
+    const values = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i += 3) {
+      values[i] = (Math.random() - 0.5) * 16;
+      values[i + 1] = (Math.random() - 0.5) * 16;
+      values[i + 2] = (Math.random() - 0.5) * 12;
+    }
+    return values;
+  });
 
   useFrame((state) => {
     if (!pointsRef.current) return;
@@ -354,13 +358,15 @@ export const Hero = () => {
               transition={{ duration: 0.7, delay: 0.45 }}
               className="flex flex-wrap items-center gap-4 pt-2"
             >
-              <Button
-                size="lg"
-                className="group rounded-sm bg-sky-400 font-semibold text-slate-950 shadow-md shadow-sky-500/20 hover:bg-sky-300"
-              >
-                <span>Request Service Audit</span>
-                <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Button>
+              <MagneticButton>
+                <Button
+                  size="lg"
+                  className="group rounded-sm bg-sky-400 font-semibold text-slate-950 shadow-md shadow-sky-500/20 hover:bg-sky-300"
+                >
+                  <span>Request Service Audit</span>
+                  <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Button>
+              </MagneticButton>
 
               <Button
                 variant="outline"

@@ -4,6 +4,8 @@ import { SITE } from "@/constants/site";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import BackToTop from "@/components/ui/BackToTop";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,12 +69,14 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <ScrollProgressBar />
         <SmoothScrollProvider>
           <Header />
           <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />
+          <BackToTop />
         </SmoothScrollProvider>
       </body>
     </html>

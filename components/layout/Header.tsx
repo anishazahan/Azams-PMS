@@ -2,7 +2,10 @@
 
 import MobileMenu from "@/components/layout/MobileMenu";
 import Button from "@/components/ui/Button";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { NAV_ITEMS, SITE } from "@/constants/site";
+import { ROUTES } from "@/constants/routes";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ArrowUpRight, Menu } from "lucide-react";
@@ -10,11 +13,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+// Sections on the home page that double as scroll-triggered nav targets —
+// scrolling into one highlights its matching nav item even though the link
+// itself points to a separate route.
+const HOME_SCROLL_SECTIONS = [
+  { id: "services", href: ROUTES.SERVICES },
+  { id: "clients", href: ROUTES.CLIENTS },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const { scrollY } = useScroll();
+  const scrollActiveHref = useScrollSpy(HOME_SCROLL_SECTIONS, pathname === "/");
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 16);
@@ -74,9 +86,11 @@ export default function Header() {
             <nav className="hidden items-center gap-1 lg:flex">
               {NAV_ITEMS.map((item) => {
                 const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
+                  pathname === "/"
+                    ? item.href === (scrollActiveHref ?? "/")
+                    : item.href === "/"
+                      ? false
+                      : pathname.startsWith(item.href);
 
                 return (
                   <Link
@@ -109,14 +123,16 @@ export default function Header() {
             {/* CTA & Mobile Toggle */}
             <div className="flex items-center gap-3">
               <div className="hidden lg:block">
-                <Button
-                  href="/contact"
-                  size="sm"
-                  className="group rounded-sm bg-sky-400 font-mono text-xs uppercase tracking-wider text-slate-950 hover:bg-sky-300"
-                >
-                  <span>Request Audit</span>
-                  <ArrowUpRight className="ml-1 size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Button>
+                <MagneticButton strength={0.25}>
+                  <Button
+                    href="/contact"
+                    size="sm"
+                    className="group rounded-sm bg-sky-400 font-mono text-xs uppercase tracking-wider text-slate-950 hover:bg-sky-300"
+                  >
+                    <span>Request Audit</span>
+                    <ArrowUpRight className="ml-1 size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </Button>
+                </MagneticButton>
               </div>
 
               <button

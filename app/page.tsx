@@ -14,18 +14,31 @@ import StatsBand from "@/components/sections/shared/StatsBand";
 export default function HomePage() {
   return (
     <>
+      {/* Hook */}
       <Hero />
+
+      {/* Immediate trust signal */}
       <TrustBar />
-      <ServicesSection />
-      <PanIndiaOps />
+
+      {/* WHAT we do: fast visual overview, then interactive deep-dive */}
       <PinnedShowcase />
-      <TechGridSection />
+      <ServicesSection />
+
+      {/* Proof of scale, then proof of reach */}
       <StatsBand />
+      <PanIndiaOps />
+
+      {/* HOW we deliver it: technology & compliance backbone */}
+      <TechGridSection />
+
+      {/* Client proof: case studies + logos */}
       <ClientShowcase />
 
+      {/* How engagement starts, then why us */}
       <ProcessSteps />
       <WhyChooseUs />
 
+      {/* Social proof, then convert */}
       <TestimonialSection />
       <ContactCTA />
     </>

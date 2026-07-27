@@ -35,7 +35,8 @@ export const JobListings = () => {
           </h2>
 
           <p className="mt-3 font-mono text-xs text-slate-400">
-            // {JOBS.length} open positions across pan-India commercial &
+            {"// "}
+            {JOBS.length} open positions across pan-India commercial &
             industrial sites.
           </p>
         </div>
@@ -81,8 +82,7 @@ export const JobListings = () => {
 
         {filteredJobs.length === 0 && (
           <p className="mt-10 text-center font-mono text-xs text-slate-500">
-            // No active openings in this department currently — submit your CV
-            below.
+            {"// No active openings in this department currently — submit your CV below."}
           </p>
         )}
       </Container>

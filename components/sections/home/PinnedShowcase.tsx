@@ -54,6 +54,7 @@ export const PinnedShowcase = () => {
 
   return (
     <section
+      id="services"
       ref={sectionRef}
       className="relative w-full overflow-hidden border-t border-slate-800 bg-slate-950 py-24 text-slate-100 sm:py-32"
     >
@@ -80,7 +81,7 @@ export const PinnedShowcase = () => {
           </div>
 
           <p className="max-w-md font-mono text-xs leading-relaxed text-slate-400">
-            {"// SCROLL HORIZONTALLY TO EXPLORE //"} Standardized operating
+            {"// SCROLL HORIZONTALLY TO EXPLORE: "}Standardized operating
             procedures across every layer of commercial & residential property
             management.
           </p>
