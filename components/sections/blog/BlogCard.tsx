@@ -1,47 +1,80 @@
-import Link from "next/link";
-import { ArrowUpRight, Calendar, Clock } from "lucide-react";
-import type { BlogPost } from "@/types";
+"use client";
 
-function formatDate(date: string) {
+import type { BlogPost } from "@/types";
+import { ArrowUpRight, Calendar, Clock, User } from "lucide-react";
+import Link from "next/link";
+
+const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
-}
+};
 
-export default function BlogCard({ post }: { post: BlogPost }) {
+export const BlogCard = ({ post }: { post: BlogPost }) => {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group glass glass-border flex h-full flex-col justify-between gap-6 rounded-3xl p-8 transition-all duration-500 ease-premium hover:-translate-y-1.5 hover:bg-white/[0.05]"
+      className="group relative flex h-full flex-col justify-between rounded-sm border border-slate-800 bg-slate-900/60 p-7 shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-900/90 outline-none"
     >
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <span className="w-fit rounded-full border border-surface-border bg-white/[0.03] px-3 py-1 text-xs font-medium text-primary-300">
+      {/* Tactical Corner Crosshairs */}
+      <div className="pointer-events-none absolute left-1.5 top-1.5 font-mono text-[9px] text-sky-500/40">
+        +
+      </div>
+      <div className="pointer-events-none absolute right-1.5 top-1.5 font-mono text-[9px] text-sky-500/40">
+        +
+      </div>
+      <div className="pointer-events-none absolute bottom-1.5 left-1.5 font-mono text-[9px] text-sky-500/40">
+        +
+      </div>
+      <div className="pointer-events-none absolute bottom-1.5 right-1.5 font-mono text-[9px] text-sky-500/40">
+        +
+      </div>
+
+      <div>
+        {/* Category Header */}
+        <div className="flex items-center justify-between border-b border-slate-800/80 pb-3.5">
+          <span className="rounded-sm border border-sky-500/30 bg-sky-500/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase text-sky-400">
             {post.category}
           </span>
           <ArrowUpRight
-            className="size-5 text-muted transition-all duration-300 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary-300"
+            className="size-4 text-slate-500 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-sky-400"
             aria-hidden="true"
           />
         </div>
-        <h3 className="text-xl font-semibold leading-snug text-foreground">
+
+        {/* Title */}
+        <h3 className="mt-4 text-xl font-bold text-white transition-colors group-hover:text-sky-300 leading-snug">
           {post.title}
         </h3>
-        <p className="text-sm leading-relaxed text-muted">{post.excerpt}</p>
+
+        {/* Excerpt */}
+        <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-slate-300">
+          {post.excerpt}
+        </p>
       </div>
 
-      <div className="flex items-center gap-4 border-t border-surface-border pt-5 text-xs text-muted">
-        <span className="flex items-center gap-1.5">
-          <Calendar className="size-3.5" aria-hidden="true" />
-          {formatDate(post.date)}
-        </span>
-        <span className="flex items-center gap-1.5">
-          <Clock className="size-3.5" aria-hidden="true" />
-          {post.readTime}
-        </span>
+      {/* Metadata Footer */}
+      <div className="mt-6 flex flex-col gap-3 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-400">
+        <div className="flex items-center gap-1.5 text-slate-400">
+          <User className="size-3 text-sky-400" />
+          <span className="truncate">{post.author}</span>
+        </div>
+
+        <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <span className="flex items-center gap-1">
+            <Calendar className="size-3 text-slate-400" />
+            {formatDate(post.date)}
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="size-3 text-slate-400" />
+            {post.readTime}
+          </span>
+        </div>
       </div>
     </Link>
   );
-}
+};
+
+export default BlogCard;
