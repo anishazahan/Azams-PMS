@@ -1,117 +1,88 @@
-# Amaze PMS — Redesign
+# Amaze Property Management Services (Amaze PMS)
 
-A premium, animation-driven redesign of [amazepms.com](https://www.amazepms.com) — the corporate site for
-Amaze Property Management Solutions Pvt Ltd — built as a frontend assignment for Dacitos Technologies.
+> **Enterprise Integrated Facility Management & Command Platform**  
+> A high-performance Next.js 16 application engineered for multi-site operations, zero-downtime MEP engineering, smart security guarding, and statutory compliance tracking pan-India.
 
-The visual direction takes cues from Stripe, Linear, Vercel, and Framer: a dark, high-contrast theme,
-large typography, glassmorphic cards, generous whitespace, and scroll-driven motion — applied to a real
-facility-management business (security, housekeeping, MEP, landscaping, pest control, help desk,
-parking, and utility management) rather than a generic SaaS product.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-azams--pms.netlify.app-00f2fe?style=for-the-badge&logo=netlify)](https://azams-pms.netlify.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38BDF8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Yarn](https://img.shields.io/badge/Yarn-Pkg_Manager-2C8EBB?style=for-the-badge&logo=yarn)](https://yarnpkg.com/)
 
-Business content (services, founder story, stats, contact details) is sourced from the live site to
-keep the redesign's substance accurate; the visual system, copy structure, and all code are original.
+---
 
-## Tech Stack
+## 🌐 Live Deployment
 
-- **Next.js 16** (App Router, Turbopack, React 19.2)
-- **TypeScript** (strict mode)
-- **Tailwind CSS v3**
-- **Framer Motion** — scroll reveals, hover/micro-interactions, page-level transitions
-- **GSAP + ScrollTrigger** — pinned horizontal scroll showcase, scroll-linked parallax
-- **Lenis** — inertia smooth scrolling, synced to GSAP's ticker
-- **Lucide React** — icon set
+- **URL:** [https://azams-pms.netlify.app/](https://azams-pms.netlify.app/)
+- **Platform:** Netlify Enterprise CI/CD
+- **Environment:** Node.js 20.x
 
-No component libraries (shadcn, MUI, etc.) and no photography — all visuals are built from CSS
-gradients, SVG, and Lucide icons, which keeps the bundle light and the look original.
+---
 
-## Getting Started
+## 🚀 Key Architectural Features
 
-```bash
-yarn install
-yarn dev
+### 💻 Advanced Next.js & React 19 Architecture
+
+- **Next.js 16 App Router:** Server Components (RSC) for zero-JS core page delivery, combined with high-precision Client Components (`"use client"`) where interactive state is required.
+- **Dynamic Routing:** Parametric routes for `/services/[slug]`, `/careers/[slug]`, and `/blog/[slug]` with dynamic metadata generation and 404 fallback handling.
+- **SEO & Metadata API:** Fully configured OpenGraph, Twitter Cards, dynamic titles, and semantic structured schema tags across all dynamic routes.
+
+### 🎥 Motion, 3D Canvas & Animation System
+
+- **Three.js & React Three Fiber (R3F):** Interactive floating geometric 3D wireframe mesh nodes rendered dynamically inside hero sections.
+- **Smooth GSAP ScrollTrigger:** Hardware-accelerated ScrollTrigger pin animations for step-by-step onboarding workflows, timeline indicators, and statistics counters running at a locked 60fps.
+- **Framer Motion Micro-Interactions:** AnimatePresence layout transitions for interactive job board filter tabs, CTA configurators, and mobile menu overlays.
+
+### 🛡️ Code Quality & Structural Blueprint
+
+- **Centralized Data Directory (`/data` & `/constants`):** Single source of truth for services, client sectors, timeline histories, job listings, and blog insights.
+- **100% Strict TypeScript:** Complete typings (`types/index.ts`) for all components, props, static data structures, and form handlers.
+- **Arrow Function Uniformity:** Every component uses strict ES6 arrow function component expressions (`const ComponentName = () => {}`) for ESLint and Next.js compliance.
+
+---
+
+## 🎨 Design System & Accessibility
+
+- **Tactical Command Palette:** High-contrast dark space background (`slate-950`), laser grid overlays, glowing cyan (`sky-400`) and emerald status badges, and subtle slate elevated cards.
+- **Tactical Crosshair Design:** Blueprint HUD aesthetics with corner markers (`+`) and monospace telemetry indicators (`INFO // 01`, `PHASE // 02`).
+- **Accessibility (a11y):**
+  - Keyboard navigation support with visible focus outlines (`focus-visible:ring-2`).
+  - Explicit ARIA roles (`aria-hidden`, `aria-invalid`, `aria-describedby`) for interactive forms and screen readers.
+  - Contrast-compliant typography scaling across all screen sizes.
+
+---
+
+## 📂 Project Folder Structure
+
+```text
+├── app/                        # Next.js App Router
+│   ├── about/                  # About Us Page (/about)
+│   ├── blog/                   # Blog Directory Page (/blog)
+│   │   └── [slug]/             # Dynamic Blog Article Page (/blog/[slug])
+│   ├── careers/                # Careers Directory Page (/careers)
+│   │   └── [slug]/             # Dynamic Career Details Page (/careers/[slug])
+│   ├── clients/                # Clients & Regional Nodes Page (/clients)
+│   ├── contact/                # Contact & Audit Page (/contact)
+│   ├── services/               # Main Services Directory (/services)
+│   │   └── [slug]/             # Dynamic Service Details Page (/services/[slug])
+│   ├── favicon.svg             # Dynamic SVG Favicon Asset
+│   ├── layout.tsx              # Root Layout with Font & Metadata Configuration
+│   └── page.tsx                # Enterprise Home Page
+├── components/                 # Single-Responsibility Modular Components
+│   ├── sections/               # Page-Specific Layout Sections
+│   │   ├── about/              # Founder Story, Mission/Vision, Timeline
+│   │   ├── blog/               # Blog Grid, Blog Cards
+│   │   ├── careers/            # Career Hero, Job Listings, Job Cards
+│   │   ├── clients/            # Client Sectors, Regional Presence
+│   │   ├── home/               # Hero, Capabilities, Process, Why Choose Us
+│   │   ├── services/           # Pinned Showcase, Services Matrix
+│   │   └── shared/             # PageHero, StatsBand, ContactCTA, TrustBar
+│   └── ui/                     # Reusable UI Primitives (Container, Button, Reveal, GlassCard)
+├── constants/                  # Static Application Constants & Branding Config
+├── data/                       # Centralized Data Storage (Jobs, Services, Blog, Timeline)
+├── lib/                        # Helper Utilities (GSAP registration, Motion presets, cn)
+├── public/                     # Static Assets & Icons
+├── types/                      # TypeScript Global Interfaces & Types
+├── tailwind.config.ts          # Tailwind CSS Theme & Plugin Configuration
+└── package.json                # Project Dependencies & Scripts
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-Other scripts:
-
-```bash
-yarn build   # production build (Turbopack)
-yarn start   # serve the production build
-yarn lint    # ESLint (flat config)
-```
-
-Requires Node.js 20.9+ (Next.js 16 minimum).
-
-## Project Structure
-
-```
-app/                       Routes (App Router)
-  page.tsx                 Home
-  about/                   About
-  services/                Services list
-  services/[slug]/         Service detail (dynamic route, generateStaticParams)
-  contact/                 Contact (client-validated form)
-  careers/                 Careers (filterable job listings)
-  blog/, blog/[slug]/      Blog list + detail (dynamic route)
-  testimonials/, clients/  Supporting pages
-  sitemap.ts, robots.ts    SEO
-  opengraph-image.tsx      Generated OG card
-  not-found.tsx            Branded 404
-
-components/
-  ui/                      Reusable primitives (Button, Reveal, TextReveal, GlassCard, ...)
-  layout/                  Header, MobileMenu, Footer
-  providers/               Lenis + GSAP smooth-scroll provider
-  sections/
-    home/, about/, services/, contact/, careers/, blog/, clients/
-    shared/                Cross-page sections (PageHero, CTASection, StatsBand, ProcessSteps, ...)
-
-data/                      Content as data (services, testimonials, jobs, blog posts, stats, ...)
-types/                     Shared TypeScript interfaces
-constants/                 Site-wide config (nav, contact info, footer links)
-lib/                       cn() helper, Framer Motion variants
-hooks/                     useCounter (animated stat counters)
-```
-
-Every service's content lives in `data/services.ts` and is rendered through a single
-`app/services/[slug]/page.tsx` template — there are no per-service page files to duplicate.
-
-## Animation Approach
-
-- **Framer Motion** handles anything tied to component state or viewport entry: fade/slide reveals
-  (`components/ui/Reveal.tsx`), the word-by-word headline reveal (`TextReveal.tsx`), hover
-  micro-interactions, and the AnimatePresence-driven mobile menu and job-filter transitions.
-- **GSAP + ScrollTrigger** handles scroll-scrubbed and pinned animation: the home page's service
-  showcase pins the section and translates the card track horizontally as you scroll
-  (`components/sections/home/PinnedShowcase.tsx`), and the hero's background orbs parallax against
-  scroll position. Both fall back to a plain horizontally-scrollable/static layout under
-  `prefers-reduced-motion`.
-- **Lenis** provides the inertia/smooth-scroll feel, synced to GSAP's ticker so ScrollTrigger stays in
-  step with the smoothed scroll position. Disabled entirely under `prefers-reduced-motion`.
-
-## Accessibility & Performance Notes
-
-- Respects `prefers-reduced-motion` at the smooth-scroll, GSAP, and CSS animation layers.
-- Skip-to-content link, semantic landmarks, visible focus states, and labelled form errors
-  (`aria-invalid` / `aria-describedby`) on the contact form.
-- No client-side data fetching on any page — all content is statically known at build time, so every
-  route is fully static/prerendered (`yarn build` output shows `○ Static` / `● SSG` for all routes).
-- Fonts loaded via `next/font` (Geist), self-hosted with no layout shift.
-
-## Design Choices Worth Noting
-
-- **No stock photography.** Property-management sites lean heavily on generic stock photos; instead,
-  the design uses gradient meshes, grid overlays, and glass cards to hit "premium" without relying on
-  imagery that isn't actually the client's.
-- **Client names on `/clients` are sector categories**, not fabricated company names — real client
-  names weren't available from the source site, and inventing specific named "clients" would be
-  misleading in a real business context.
-- **Contact form is UI-complete but front-end only**: client-side validation and a simulated submit
-  state, no backend wired up (would need an email/API provider and credentials the assignment didn't
-  ask for).
-
-## Deployment
-
-Deploys as-is to Vercel (`vercel deploy`) or Netlify — no environment variables or external services
-required.

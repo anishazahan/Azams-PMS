@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Activity, Building2, CheckCircle2, Wrench } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -132,7 +133,7 @@ function Realistic3DPropertyCard({ activeMode }: { activeMode: string }) {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
             </span>
             <span className="whitespace-nowrap uppercase tracking-wider text-slate-200">
-              {activeMode} {"// 3D NODE ACTIVE"}
+              {activeMode} {"// 3D ACTIVE"}
             </span>
           </motion.div>
         </Html>
@@ -345,26 +346,30 @@ export const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons with Dynamic Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
               className="flex flex-wrap items-center gap-4 pt-2"
             >
-              <MagneticButton>
-                <Button size="lg" variant="tactical" withArrow>
-                  Request Service Audit
-                </Button>
-              </MagneticButton>
+              <Link href="/contact">
+                <MagneticButton>
+                  <Button size="lg" variant="tactical" withArrow>
+                    Request Service Audit
+                  </Button>
+                </MagneticButton>
+              </Link>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-sm border-slate-800 bg-slate-900/60 text-slate-200 backdrop-blur-md hover:bg-slate-800"
-              >
-                Explore All Services
-              </Button>
+              <Link href="/services">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-sm border-slate-800 bg-slate-900/60 text-slate-200 backdrop-blur-md hover:bg-slate-800"
+                >
+                  Explore All Services
+                </Button>
+              </Link>
             </motion.div>
 
             {/* REAL ANIMATED COUNT-UP STATS BAR */}
