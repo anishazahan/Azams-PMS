@@ -22,7 +22,7 @@ export default function ServicesPage() {
         description="From security to swimming pool maintenance, our in-house teams deliver eight integrated service lines to a single documented standard."
       />
 
-      <section className="relative pb-24 sm:pb-32">
+      <section className="relative  pb-24 sm:pb-32">
         <Container>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service, i) => (
