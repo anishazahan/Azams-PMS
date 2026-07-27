@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { SERVICES } from "@/data/services";
+import { ServiceCard } from "@/components/sections/services/ServiceCard";
+import CTASection from "@/components/sections/shared/CTASection";
+import PageHero from "@/components/sections/shared/PageHero";
+import { ProcessSteps } from "@/components/sections/shared/ProcessSteps";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import PageHero from "@/components/sections/shared/PageHero";
-import ServiceCard from "@/components/sections/services/ServiceCard";
-import { ProcessSteps } from "@/components/sections/shared/ProcessSteps";
-import CTASection from "@/components/sections/shared/CTASection";
+import { SERVICES } from "@/data/services";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services",
